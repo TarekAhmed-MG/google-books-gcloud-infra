@@ -40,6 +40,8 @@ resource "google_container_cluster" "gke" {
     master_ipv4_cidr_block  = "192.168.0.0/28"
   }
 
+
+
   # Jenkins use case
   # master_authorized_networks_config {
   #   cidr_blocks {

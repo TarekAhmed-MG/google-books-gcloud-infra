@@ -30,10 +30,17 @@ resource "google_container_node_pool" "general" {
 
   node_config {
     preemptible  = false
-    machine_type = "e2-medium"
+    machine_type = "e2-standard-4"
+    disk_type = "pd-standard"
+    disk_size_gb = 30
 
     labels = {
       role = "general"
+    }
+
+    # ✅ Enable Workload Identity metadata
+    workload_metadata_config {
+      mode = "GKE_METADATA"
     }
 
     # taint {
